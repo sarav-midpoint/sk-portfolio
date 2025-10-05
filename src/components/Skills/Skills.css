@@ -1,0 +1,86 @@
+/* src/components/Skills/Skills.css */
+.skills {
+  background: transparent;
+  padding-top: 50px;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.skill-category {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-category:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: var(--secondary);
+  transform: scaleY(0);
+  transition: transform 0.4s ease;
+}
+
+.skill-category:hover:before {
+  transform: scaleY(1);
+}
+
+.skill-category:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.skill-category h3 {
+  color: var(--secondary);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  font-family: "Fira Code", monospace;
+}
+
+.skill-category h3 i {
+  margin-right: 10px;
+}
+
+.skill-list {
+  list-style: none;
+}
+
+.skill-list li {
+  margin-bottom: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  font-family: "Fira Code", monospace;
+}
+
+.skill-list li:hover {
+  transform: translateX(10px);
+  color: var(--terminal);
+}
+
+.skill-list li:before {
+  content: ">";
+  color: var(--terminal);
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+
+.skill-list li:hover:before {
+  transform: scale(1.5);
+}

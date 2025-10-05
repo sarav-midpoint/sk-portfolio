@@ -1,0 +1,115 @@
+/* src/components/Experience/Experience.css */
+.experience {
+  background: rgba(20, 20, 20, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  margin: 0 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline:before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background: var(--secondary);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+  border-radius: 2px;
+  animation: pulse 2s infinite;
+}
+
+.timeline-item {
+  padding: 20px 40px;
+  position: relative;
+  width: 50%;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s ease;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+}
+
+.timeline-content {
+  padding: 30px;
+  background: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timeline-content:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.timeline-content:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--card-bg);
+  top: 20px;
+  transform: rotate(45deg);
+  transition: all 0.4s ease;
+}
+
+.timeline-item:nth-child(odd) .timeline-content:after {
+  right: -10px;
+}
+
+.timeline-item:nth-child(even) .timeline-content:after {
+  left: -10px;
+}
+
+.timeline-date {
+  font-weight: 600;
+  color: var(--terminal);
+  margin-bottom: 10px;
+  display: inline-block;
+  padding: 5px 15px;
+  background: rgba(0, 255, 65, 0.1);
+  border-radius: 4px;
+  font-family: "Fira Code", monospace;
+}
+
+.timeline-item:nth-child(odd) .timeline-date {
+  text-align: right;
+}
+
+.timeline-dot {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: var(--secondary);
+  border-radius: 50%;
+  top: 30px;
+  right: -7.5px;
+  z-index: 1;
+  box-shadow: 0 0 0 5px rgba(0, 217, 255, 0.3);
+  animation: pulse 2s infinite;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+  left: -7.5px;
+}

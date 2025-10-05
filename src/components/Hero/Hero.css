@@ -1,0 +1,55 @@
+/* src/components/Hero/Hero.css */
+.hero {
+  padding: 200px 0 150px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: var(--text);
+  opacity: 0;
+  animation: fadeInUp 1s ease 0.5s forwards;
+  font-family: "Fira Code", monospace;
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+  color: var(--terminal);
+  opacity: 0;
+  animation: fadeInUp 1s ease 0.7s forwards;
+  font-family: "Fira Code", monospace;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeInUp 1s ease 0.9s forwards;
+}
+
+.hero-btns {
+  opacity: 0;
+  animation: fadeInUp 1s ease 1.1s forwards;
+}
+
+.typing-demo {
+  width: 22ch;
+  animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: "Fira Code", monospace;
+  margin: 0 auto 30px;
+  font-size: 1.5rem;
+  color: var(--terminal);
+}
